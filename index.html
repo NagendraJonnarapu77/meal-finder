@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Meal Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo"><i class="fas fa-utensils"></i> MEAL FINDER</h1>
+
+            <!-- Animated hamburger toggle -->
+            <button class="menu-btn" type="button" aria-label="Open categories" aria-expanded="false">
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- dark overlay shown when sidebar is open -->
+    <div id="sidebarOverlay" class="sidebar-overlay hidden" aria-hidden="true"></div>
+
+    <!-- Sidebar -->
+    <aside class="category-sidebar" id="categorySidebar" aria-hidden="true">
+        <button class="close-icon" aria-label="Close categories">&times;</button>
+        <ul id="categoryList" role="list"></ul>
+    </aside>
+
+    <!-- Search hero -->
+    <section class="search-section" aria-label="Search">
+        <div class="search-overlay">
+            <form class="searchForm" role="search">
+                <input id="searchInput" type="text" placeholder="Search recipes here..." aria-label="Search recipes" />
+                <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
+            </form>
+            <h2 class="search-title">What are your favorite cuisines?</h2>
+            <h2 class="search-subtitle">PERSONALIZE YOUR EXPERIENCE</h2>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div id="breadcrumb" class="breadcrumb hidden" aria-hidden="true"></div>
+
+    <!-- Categories -->
+    <main>
+        <section class="categories-section" id="categoriesSection">
+            <div class="categories-header">
+                <h2 class="section-title">CATEGORIES</h2>
+            </div>
+            <div class="categories-grid" id="categories-grid" aria-live="polite"></div>
+        </section>
+
+        <!-- Meals -->
+        <section id="meals-by-category" class="hidden" aria-hidden="true">
+            <div id="description"></div>
+            <div class="categories-header">
+                <h2 class="section-title">MEALS</h2>
+            </div>
+            <div class="meals-grid" id="meals-grid" aria-live="polite"></div>
+        </section>
+
+        <!-- Meal Details -->
+        <section id="meal-details" class="hidden" aria-hidden="true">
+            <div class="meal-details-header">
+                <div class="meal-details-title-bar">
+                    <button id="back-button" aria-label="Back" class="back-btn"><i
+                            class="fas fa-arrow-left"></i></button>
+                    <h1>MEAL DETAILS</h1>
+                </div>
+            </div>
+            <div class="meal-details-container" id="meal-details-container"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
